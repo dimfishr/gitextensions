@@ -109,7 +109,7 @@ namespace GitUI.UserControls
                 {
                     UseShellExecute = false,
                     ErrorDialog = false,
-                    CreateNoWindow = !ssh && !AppSettings.ShowGitCommandLine,
+                    CreateNoWindow = !AppSettings.ShowGitCommandLine,
                     RedirectStandardInput = true,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
