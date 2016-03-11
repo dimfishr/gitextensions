@@ -52,6 +52,7 @@ namespace GitUI.CommandsDialogs
             this.fetchAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fetchPruneAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setDefaultPullButtonActionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonFetch = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonPush = new GitUI.CommandsDialogs.ToolStripPushButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripFileExplorer = new System.Windows.Forms.ToolStripButton();
@@ -261,6 +262,7 @@ namespace GitUI.CommandsDialogs
             this.branchSelect,
             this.toolStripSeparator1,
             this.toolStripButtonPull,
+            this.toolStripButtonFetch,
             this.toolStripButtonPush,
             this.toolStripButtonCommit,
             this.toolStripSplitStash,
@@ -563,6 +565,17 @@ namespace GitUI.CommandsDialogs
             this.setDefaultPullButtonActionToolStripMenuItem.Name = "setDefaultPullButtonActionToolStripMenuItem";
             this.setDefaultPullButtonActionToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
             this.setDefaultPullButtonActionToolStripMenuItem.Text = "Set default Pull button action";
+
+            // 
+            // toolStripButtonFetch
+            // 
+            this.toolStripButtonFetch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFetch.Image = global::GitUI.Properties.Images.PullFetchAll;
+            this.toolStripButtonFetch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFetch.Name = "toolStripButtonFetch";
+            this.toolStripButtonFetch.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonFetch.Text = "Fetch all";
+            this.toolStripButtonFetch.Click += new System.EventHandler(this.fetchAllToolStripMenuItem_Click);
             // 
             // toolStripButtonPush
             // 
@@ -1893,6 +1906,7 @@ namespace GitUI.CommandsDialogs
         private ToolStripButton EditSettings;
         private ToolStripButton RefreshButton;
         private ToolStripTextBox toolStripRevisionFilterTextBox;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFetch;
         private ToolStripPushButton toolStripButtonPush;
         private ToolStripLabel toolStripRevisionFilterLabel;
         private ToolStripSplitButton toolStripSplitStash;
