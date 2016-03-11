@@ -54,6 +54,7 @@ namespace GitUI.CommandsDialogs
             fetchAllToolStripMenuItem = new ToolStripMenuItem();
             fetchPruneAllToolStripMenuItem = new ToolStripMenuItem();
             setDefaultPullButtonActionToolStripMenuItem = new ToolStripMenuItem();
+            toolStripButtonFetch = new System.Windows.Forms.ToolStripButton();
             toolStripButtonPush = new GitUI.CommandsDialogs.ToolStripPushButton();
             toolStripSeparator2 = new ToolStripSeparator();
             toolStripFileExplorer = new ToolStripButton();
@@ -213,6 +214,7 @@ namespace GitUI.CommandsDialogs
             branchSelect,
             toolStripSeparator1,
             toolStripButtonPull,
+            toolStripButtonFetch,
             toolStripButtonPush,
             toolStripButtonCommit,
             toolStripSplitStash,
@@ -482,6 +484,17 @@ namespace GitUI.CommandsDialogs
             setDefaultPullButtonActionToolStripMenuItem.Name = "setDefaultPullButtonActionToolStripMenuItem";
             setDefaultPullButtonActionToolStripMenuItem.Size = new Size(239, 22);
             setDefaultPullButtonActionToolStripMenuItem.Text = "Set &default Pull button action";
+
+            // 
+            // toolStripButtonFetch
+            // 
+            toolStripButtonFetch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            toolStripButtonFetch.Image = global::GitUI.Properties.Images.PullFetchAll;
+            toolStripButtonFetch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            toolStripButtonFetch.Name = "toolStripButtonFetch";
+            toolStripButtonFetch.Size = new System.Drawing.Size(23, 22);
+            toolStripButtonFetch.Text = "Fetch all";
+            toolStripButtonFetch.Click += new System.EventHandler(this.fetchAllToolStripMenuItem_Click);
             // 
             // toolStripButtonPush
             // 
@@ -1485,6 +1498,7 @@ namespace GitUI.CommandsDialogs
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton EditSettings;
         private ToolStripButton RefreshButton;
+        private ToolStripButton toolStripButtonFetch;
         private ToolStripPushButton toolStripButtonPush;
         private ToolStripSplitButton toolStripSplitStash;
         private ToolStripMenuItem stashChangesToolStripMenuItem;
