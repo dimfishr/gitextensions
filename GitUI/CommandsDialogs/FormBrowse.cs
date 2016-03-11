@@ -896,6 +896,7 @@ namespace GitUI.CommandsDialogs
                 toolStripButtonCommit.Enabled = validBrowseDir && !bareRepository;
 
                 toolStripButtonPull.Enabled = validBrowseDir;
+                toolStripButtonFetch.Enabled = validBrowseDir;
                 toolStripButtonPush.Enabled = validBrowseDir;
                 dashboardToolStripMenuItem.Visible = isDashboard;
                 pluginsToolStripMenuItem.Visible = validBrowseDir;
