@@ -966,6 +966,7 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
             toolStripButtonCommit.Enabled = validBrowseDir && !bareRepository;
 
             toolStripButtonPull.Enabled = validBrowseDir;
+            toolStripButtonFetch.Enabled = validBrowseDir;
             toolStripButtonPush.Enabled = validBrowseDir;
             toolStripButtonPush.ResetBeforeUpdate();
             dashboardToolStripMenuItem.Visible = isDashboard;
