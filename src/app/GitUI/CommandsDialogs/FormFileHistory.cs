@@ -45,6 +45,8 @@ namespace GitUI.CommandsDialogs
             InitializeComponent();
             ConfigureTabControl();
 
+            tabControl1.SelectedTab = DiffTab;
+
             ToolStripFilters.Bind(() => Module, RevisionGrid);
 
             Color toolForeColor = SystemColors.WindowText;
