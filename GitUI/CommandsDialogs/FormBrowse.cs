@@ -285,6 +285,7 @@ namespace GitUI.CommandsDialogs
             RevisionGrid.MenuCommands.MenuChanged += (sender, e) => _formBrowseMenus.OnMenuCommandsPropertyChanged();
             SystemEvents.SessionEnding += (sender, args) => SaveApplicationSettings();
 
+            CommitInfoTabControl.SelectedTab = DiffTabPage;
             ManageWorktreeSupport();
 
             WorkaroundToolbarLocationBug();

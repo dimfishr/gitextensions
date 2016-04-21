@@ -58,6 +58,8 @@ namespace GitUI.CommandsDialogs
             InitializeComponent();
             ConfigureTabControl();
 
+            tabControl1.SelectedTab = DiffTab;
+
             _filterBranchHelper = new FilterBranchHelper(toolStripBranchFilterComboBox, toolStripBranchFilterDropDownButton, FileChanges);
             _filterRevisionsHelper = new FilterRevisionsHelper(toolStripRevisionFilterTextBox, toolStripRevisionFilterDropDownButton, FileChanges, toolStripRevisionFilterLabel, ShowFirstParent, form: this);
 
