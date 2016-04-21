@@ -48,6 +48,8 @@ public sealed partial class FormFileHistory : GitModuleForm, IRevisionGridFileUp
         InitializeComponent();
         ConfigureTabControl();
 
+        tabControl1.SelectedTab = DiffTab;
+
         ToolStripFilters.Bind(() => Module, RevisionGrid);
 
         Color toolForeColor = SystemColors.WindowText;
