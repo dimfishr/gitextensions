@@ -311,6 +311,7 @@ namespace GitUI.CommandsDialogs
             _submoduleStatusProvider.StatusUpdating += SubmoduleStatusProvider_StatusUpdating;
             _submoduleStatusProvider.StatusUpdated += SubmoduleStatusProvider_StatusUpdated;
 
+            CommitInfoTabControl.SelectedTab = DiffTabPage;
             foreach (Control control in this.FindDescendants())
             {
                 control.AllowDrop = true;
