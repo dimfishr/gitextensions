@@ -2,6 +2,7 @@ using System;
 
 namespace GitCommands.Git
 {
+    [Serializable]
     public class FileDeleteException : Exception
     {
         public FileDeleteException(string fileName, Exception inner)
