@@ -3,7 +3,6 @@ using System.Diagnostics.CodeAnalysis;
 using GitCommands;
 using GitExtensions.Extensibility.Git;
 using GitExtUtils;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.ScriptsEngine;
 using ResourceManager;
 
@@ -96,8 +95,6 @@ public class GitModuleForm : GitExtensionsForm, IGitUICommandsSource, IGitModule
         {
             UICommands = commands;
         }
-
-        DiagnosticsClient.TrackPageView(GetType().FullName);
     }
 
     protected GitModuleForm([NotNull] IGitUICommands commands)

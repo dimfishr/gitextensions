@@ -29,10 +29,6 @@ partial class GeneralSettingsPage
     private void InitializeComponent()
     {
         TableLayoutPanel tlpnlMain;
-        groupBoxTelemetry = new GroupBox();
-        tlpnlTelemetry = new TableLayoutPanel();
-        chkTelemetry = new CheckBox();
-        llblTelemetryPrivacyLink = new LinkLabel();
         groupBoxPerformance = new GroupBox();
         tlpnlPerformance = new TableLayoutPanel();
         chkShowAheadBehindDataInBrowseWindow = new CheckBox();
@@ -62,8 +58,6 @@ partial class GeneralSettingsPage
         chkUpdateModules = new CheckBox();
         tlpnlMain = new TableLayoutPanel();
         tlpnlMain.SuspendLayout();
-        groupBoxTelemetry.SuspendLayout();
-        tlpnlTelemetry.SuspendLayout();
         groupBoxPerformance.SuspendLayout();
         tlpnlPerformance.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)(_NO_TRANSLATE_MaxCommits)).BeginInit();
@@ -78,7 +72,6 @@ partial class GeneralSettingsPage
         tlpnlMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         tlpnlMain.ColumnCount = 1;
         tlpnlMain.ColumnStyles.Add(new ColumnStyle());
-        tlpnlMain.Controls.Add(groupBoxTelemetry, 0, 2);
         tlpnlMain.Controls.Add(groupBoxPerformance, 0, 0);
         tlpnlMain.Controls.Add(groupBoxBehaviour, 0, 1);
         tlpnlMain.Dock = DockStyle.Fill;
@@ -91,60 +84,19 @@ partial class GeneralSettingsPage
         tlpnlMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
         tlpnlMain.Size = new Size(1263, 507);
         tlpnlMain.TabIndex = 0;
-        // 
-        // groupBoxTelemetry
-        // 
-        groupBoxTelemetry.AutoSize = true;
-        groupBoxTelemetry.Controls.Add(tlpnlTelemetry);
-        groupBoxTelemetry.Dock = DockStyle.Fill;
-        groupBoxTelemetry.Location = new Point(3, 503);
-        groupBoxTelemetry.Name = "groupBoxTelemetry";
-        groupBoxTelemetry.Padding = new Padding(8);
-        groupBoxTelemetry.Size = new Size(1257, 52);
-        groupBoxTelemetry.TabIndex = 3;
-        groupBoxTelemetry.TabStop = false;
-        groupBoxTelemetry.Text = "Telemetry";
-        // 
-        // tlpnlTelemetry
-        // 
-        tlpnlTelemetry.AutoSize = true;
-        tlpnlTelemetry.ColumnCount = 2;
-        tlpnlTelemetry.ColumnStyles.Add(new ColumnStyle());
-        tlpnlTelemetry.ColumnStyles.Add(new ColumnStyle());
-        tlpnlTelemetry.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-        tlpnlTelemetry.Controls.Add(chkTelemetry, 0, 0);
-        tlpnlTelemetry.Controls.Add(llblTelemetryPrivacyLink, 1, 0);
-        tlpnlTelemetry.Dock = DockStyle.Top;
-        tlpnlTelemetry.Location = new Point(8, 21);
-        tlpnlTelemetry.Name = "tlpnlTelemetry";
-        tlpnlTelemetry.RowCount = 1;
-        tlpnlTelemetry.RowStyles.Add(new RowStyle());
-        tlpnlTelemetry.Size = new Size(1241, 23);
-        tlpnlTelemetry.TabIndex = 0;
-        // 
-        // chkTelemetry
-        // 
-        chkTelemetry.AutoSize = true;
-        chkTelemetry.Dock = DockStyle.Fill;
-        chkTelemetry.Location = new Point(3, 3);
-        chkTelemetry.Name = "chkTelemetry";
-        chkTelemetry.Size = new Size(128, 17);
-        chkTelemetry.TabIndex = 0;
-        chkTelemetry.Text = "Yes, I allow telemetry!";
-        chkTelemetry.UseVisualStyleBackColor = true;
-        // 
-        // llblTelemetryPrivacyLink
-        // 
-        llblTelemetryPrivacyLink.Dock = DockStyle.Fill;
-        llblTelemetryPrivacyLink.Location = new Point(137, 0);
-        llblTelemetryPrivacyLink.Name = "llblTelemetryPrivacyLink";
-        llblTelemetryPrivacyLink.Size = new Size(1357, 23);
-        llblTelemetryPrivacyLink.TabIndex = 1;
-        llblTelemetryPrivacyLink.TabStop = true;
-        llblTelemetryPrivacyLink.Text = "Why and what is captured?";
-        llblTelemetryPrivacyLink.TextAlign = ContentAlignment.MiddleLeft;
-        llblTelemetryPrivacyLink.LinkClicked += LlblTelemetryPrivacyLink_LinkClicked;
-        // 
+            // 
+            // groupBoxTelemetry
+            // 
+            // 
+            // tlpnlTelemetry
+            // 
+            // 
+            // chkTelemetry
+            // 
+            // 
+            // llblTelemetryPrivacyLink
+            // 
+            // 
         // groupBoxPerformance
         // 
         groupBoxPerformance.AutoSize = true;
@@ -540,10 +492,6 @@ partial class GeneralSettingsPage
         Text = "General";
         tlpnlMain.ResumeLayout(false);
         tlpnlMain.PerformLayout();
-        groupBoxTelemetry.ResumeLayout(false);
-        groupBoxTelemetry.PerformLayout();
-        tlpnlTelemetry.ResumeLayout(false);
-        tlpnlTelemetry.PerformLayout();
         groupBoxPerformance.ResumeLayout(false);
         groupBoxPerformance.PerformLayout();
         tlpnlPerformance.ResumeLayout(false);
@@ -585,10 +533,6 @@ partial class GeneralSettingsPage
     private TableLayoutPanel tlpnlBehaviour;
     private CheckBox chkFollowRenamesInFileHistoryExact;
     private CheckBox chkShowAheadBehindDataInBrowseWindow;
-    private GroupBox groupBoxTelemetry;
-    private TableLayoutPanel tlpnlTelemetry;
-    private CheckBox chkTelemetry;
-    private LinkLabel llblTelemetryPrivacyLink;
     private Label lblDefaultPullAction;
     private ComboBox cboDefaultPullAction;
     private CheckBox chkUpdateModules;

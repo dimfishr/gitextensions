@@ -35,7 +35,6 @@ partial class HelpToolStripMenuItem
         translateToolStripMenuItem = new ToolStripMenuItem();
         toolStripSeparator16 = new ToolStripSeparator();
         donateToolStripMenuItem = new ToolStripMenuItem();
-        tsmiTelemetryEnabled = new ToolStripMenuItem();
         reportAnIssueToolStripMenuItem = new ToolStripMenuItem();
         checkForUpdatesToolStripMenuItem = new ToolStripMenuItem();
         aboutToolStripMenuItem = new ToolStripMenuItem();
@@ -82,15 +81,6 @@ partial class HelpToolStripMenuItem
         donateToolStripMenuItem.Text = "&Donate";
         donateToolStripMenuItem.Click += DonateToolStripMenuItemClick;
         // 
-        // tsmiTelemetryEnabled
-        // 
-        tsmiTelemetryEnabled.Checked = true;
-        tsmiTelemetryEnabled.CheckState = CheckState.Checked;
-        tsmiTelemetryEnabled.Name = "tsmiTelemetryEnabled";
-        tsmiTelemetryEnabled.Size = new Size(184, 22);
-        tsmiTelemetryEnabled.Text = "&Yes, I allow telemetry";
-        tsmiTelemetryEnabled.Click += TsmiTelemetryEnabled_Click;
-        // 
         // reportAnIssueToolStripMenuItem
         // 
         reportAnIssueToolStripMenuItem.Image = Properties.Images.BugReport;
@@ -124,7 +114,6 @@ partial class HelpToolStripMenuItem
         translateToolStripMenuItem,
         toolStripSeparator16,
         donateToolStripMenuItem,
-        tsmiTelemetryEnabled,
         reportAnIssueToolStripMenuItem,
         checkForUpdatesToolStripMenuItem,
         aboutToolStripMenuItem});
@@ -140,7 +129,6 @@ partial class HelpToolStripMenuItem
     private ToolStripMenuItem translateToolStripMenuItem;
     private ToolStripSeparator toolStripSeparator16;
     private ToolStripMenuItem donateToolStripMenuItem;
-    private ToolStripMenuItem tsmiTelemetryEnabled;
     private ToolStripMenuItem reportAnIssueToolStripMenuItem;
     private ToolStripMenuItem checkForUpdatesToolStripMenuItem;
     private ToolStripMenuItem aboutToolStripMenuItem;
