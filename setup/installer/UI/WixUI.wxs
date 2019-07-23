@@ -55,12 +55,10 @@
       <Publish Dialog="GitEx_CustomizeDlg" Control="Next" Event="NewDialog" Value="GitEx_VerifyReadyDlg" Order="1"><![CDATA[Upgrading]]></Publish>
 
       <!-- not installed: show telemetry screens -->
-      <Publish Dialog="GitEx_CustomizeDlg" Control="Next" Event="NewDialog" Value="GitEx_TelemetryDlg" Order="2"><![CDATA[NOT Upgrading]]></Publish>
-      <Publish Dialog="GitEx_TelemetryDlg" Control="Back" Event="NewDialog" Value="GitEx_CustomizeDlg" Order="2"><![CDATA[NOT Upgrading]]></Publish>
-      <Publish Dialog="GitEx_TelemetryDlg" Control="Next" Event="NewDialog" Value="GitEx_VerifyReadyDlg" Order="2"><![CDATA[NOT Upgrading]]></Publish>
+      <Publish Dialog="GitEx_CustomizeDlg" Control="Next" Event="NewDialog" Value="GitEx_VerifyReadyDlg" Order="2"><![CDATA[NOT Upgrading]]></Publish>
 
 
-      <Publish Dialog="GitEx_VerifyReadyDlg" Control="Back" Event="NewDialog" Value="GitEx_TelemetryDlg" Order="1"><![CDATA[NOT Upgrading]]></Publish>
+      <Publish Dialog="GitEx_VerifyReadyDlg" Control="Back" Event="NewDialog" Value="GitEx_CustomizeDlg" Order="1"><![CDATA[NOT Upgrading]]></Publish>
       <Publish Dialog="GitEx_VerifyReadyDlg" Control="Back" Event="NewDialog" Value="GitEx_CustomizeDlg" Order="3"><![CDATA[Upgrading]]></Publish>
 
       <Publish Dialog="GitEx_MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="GitEx_MaintenanceTypeDlg">1</Publish>
