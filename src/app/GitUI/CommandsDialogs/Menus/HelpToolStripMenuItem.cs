@@ -15,7 +15,6 @@ internal partial class HelpToolStripMenuItem : ToolStripMenuItemEx
 
     private void this_DropDownOpening(object sender, EventArgs e)
     {
-        tsmiTelemetryEnabled.Checked = AppSettings.TelemetryEnabled ?? false;
     }
 
     private void AboutToolStripMenuItemClick(object sender, EventArgs e)
@@ -51,11 +50,6 @@ internal partial class HelpToolStripMenuItem : ToolStripMenuItemEx
     private void TranslateToolStripMenuItemClick(object sender, EventArgs e)
     {
         OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/gitextensions/gitextensions/wiki/Translations");
-    }
-
-    private void TsmiTelemetryEnabled_Click(object sender, EventArgs e)
-    {
-        UICommands.StartGeneralSettingsDialog(OwnerForm);
     }
 
     private void UserManualToolStripMenuItemClick(object sender, EventArgs e)

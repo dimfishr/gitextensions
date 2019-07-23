@@ -22,7 +22,6 @@ using GitUI.CommandsDialogs.BrowseDialog;
 using GitUI.CommandsDialogs.BrowseDialog.DashboardControl;
 using GitUI.CommandsDialogs.WorktreeDialog;
 using GitUI.HelperDialogs;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.LeftPanel;
 using GitUI.Models;
 using GitUI.NBugReports;
@@ -217,7 +216,7 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
     private readonly IScriptsManager _scriptsManager;
     private readonly IRepositoryHistoryUIService _repositoryHistoryUIService;
     private List<ToolStripItem>? _currentSubmoduleMenuItems;
-    private readonly FormBrowseDiagnosticsReporter _formBrowseDiagnosticsReporter;
+
     private BuildReportTabPageExtension? _buildReportTabPageExtension;
     private readonly ShellProvider _shellProvider = new();
     private ConEmuControl? _terminal;
@@ -270,8 +269,6 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
         _appTitleGenerator = commands.GetRequiredService<IAppTitleGenerator>();
         _windowsJumpListManager = commands.GetRequiredService<IWindowsJumpListManager>();
         _scriptsManager = commands.GetRequiredService<IScriptsManager>();
-
-        _formBrowseDiagnosticsReporter = new FormBrowseDiagnosticsReporter(this);
 
         _repositoryHostsToolStripMenuItem.Visible = false;
 
@@ -488,8 +485,6 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
         SetSplitterPositions();
 
         base.OnLoad(e);
-
-        _formBrowseDiagnosticsReporter.Report();
 
         // All app init is done, make all repo related similar to switching repos
         SetGitModule(this, new GitModuleEventArgs(new GitModule(Module.WorkingDir)));
@@ -795,12 +790,9 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
         _dashboard.RefreshContent();
         _dashboard.Visible = true;
         _dashboard.BringToFront();
-
         _createPullRequestsToolStripMenuItem.Enabled = false;
         _viewPullRequestsToolStripMenuItem.Enabled = false;
         _addUpstreamRemoteToolStripMenuItem.Enabled = false;
-
-        DiagnosticsClient.TrackPageView("Dashboard");
     }
 
     private void HideDashboard()
@@ -818,8 +810,6 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
         toolPanel.LeftToolStripPanelVisible = true;
         toolPanel.RightToolStripPanelVisible = true;
         toolPanel.ResumeLayout();
-
-        DiagnosticsClient.TrackPageView("Revision graph");
     }
 
     private void UpdatePluginMenu(bool validWorkingDir)
@@ -2793,18 +2783,12 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
     private void toggleSplitViewLayout_Click(object sender, EventArgs e)
     {
         AppSettings.ShowSplitViewLayout = !AppSettings.ShowSplitViewLayout;
-        DiagnosticsClient.TrackEvent("Layout change",
-            new Dictionary<string, string> { { nameof(AppSettings.ShowSplitViewLayout), AppSettings.ShowSplitViewLayout.ToString() } });
-
         RefreshSplitViewLayout();
     }
 
     private void toggleLeftPanel_Click(object sender, EventArgs e)
     {
         MainSplitContainer.Panel1Collapsed = !MainSplitContainer.Panel1Collapsed;
-        DiagnosticsClient.TrackEvent("Layout change",
-            new Dictionary<string, string> { { "ShowLeftPanel", MainSplitContainer.Panel1Collapsed.ToString() } });
-
         RefreshLayoutToggleButtonStates();
 
         if (!MainSplitContainer.Panel1Collapsed)
@@ -2843,9 +2827,6 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
     private void SetCommitInfoPosition(CommitInfoPosition position)
     {
         AppSettings.CommitInfoPosition = position;
-        DiagnosticsClient.TrackEvent("Layout change",
-            new Dictionary<string, string> { { nameof(AppSettings.CommitInfoPosition), AppSettings.CommitInfoPosition.ToString() } });
-
         LayoutRevisionInfo();
         RefreshLayoutToggleButtonStates();
     }
@@ -2853,9 +2834,6 @@ public sealed partial class FormBrowse : GitModuleForm, IBrowseRepo
     private void RefreshSplitViewLayout()
     {
         RightSplitContainer.Panel2Collapsed = !AppSettings.ShowSplitViewLayout;
-        DiagnosticsClient.TrackEvent("Layout change",
-            new Dictionary<string, string> { { nameof(AppSettings.ShowSplitViewLayout), AppSettings.ShowSplitViewLayout.ToString() } });
-
         RefreshLayoutToggleButtonStates();
     }
 

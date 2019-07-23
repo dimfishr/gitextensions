@@ -61,7 +61,6 @@ public partial class GeneralSettingsPage : SettingsPageWithHeader
 
         // align 1st columns across all tables
         tlpnlBehaviour.AdjustWidthToSize(0, lblDefaultCloneDestination);
-        tlpnlTelemetry.AdjustWidthToSize(0, lblDefaultCloneDestination);
     }
 
     private void SetSubmoduleStatus()
@@ -96,8 +95,6 @@ public partial class GeneralSettingsPage : SettingsPageWithHeader
         chkFollowRenamesInFileHistoryExact.Checked = AppSettings.FollowRenamesInFileHistoryExactOnly;
         SetSubmoduleStatus();
 
-        chkTelemetry.Checked = AppSettings.TelemetryEnabled ?? false;
-
         base.SettingsToPage();
     }
 
@@ -122,8 +119,6 @@ public partial class GeneralSettingsPage : SettingsPageWithHeader
         AppSettings.DefaultCloneDestinationPath = cbDefaultCloneDestination.Text;
         AppSettings.DefaultPullAction = (GitPullAction)cboDefaultPullAction.SelectedValue;
         AppSettings.FollowRenamesInFileHistoryExactOnly = chkFollowRenamesInFileHistoryExact.Checked;
-
-        AppSettings.TelemetryEnabled = chkTelemetry.Checked;
 
         base.PageToSettings();
     }
@@ -161,11 +156,6 @@ public partial class GeneralSettingsPage : SettingsPageWithHeader
     private void ShowGitStatus_CheckedChanged(object sender, EventArgs e)
     {
         SetSubmoduleStatus();
-    }
-
-    private void LlblTelemetryPrivacyLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    {
-        OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/gitextensions/gitextensions/blob/master/setup/assets/PrivacyPolicy.md");
     }
 
     private void lblCommitsLimit_CheckedChanged(object sender, EventArgs e)
