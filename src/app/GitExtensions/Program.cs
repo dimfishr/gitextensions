@@ -7,7 +7,6 @@ using GitExtUtils.GitUI;
 using GitUI;
 using GitUI.CommandsDialogs.SettingsDialog;
 using GitUI.CommandsDialogs.SettingsDialog.Pages;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.NBugReports;
 using GitUI.Theming;
 using GitUIPluginInterfaces;
@@ -70,21 +69,6 @@ namespace GitExtensions
 
             HighDpiMouseCursors.Enable();
 
-            try
-            {
-                DiagnosticsClient.Initialize(ThisAssembly.Git.IsDirty);
-            }
-            catch (TypeInitializationException tie)
-            {
-                // is this exception caused by the configuration?
-                if (tie.InnerException is not null
-                    && tie.InnerException.GetType()
-                        .IsSubclassOf(typeof(ConfigurationException)))
-                {
-                    HandleConfigurationException((ConfigurationException)tie.InnerException);
-                }
-            }
-
             AppTitleGenerator.Initialise(ThisAssembly.Git.Sha, ThisAssembly.Git.Branch);
 
             // NOTE we perform the rest of the application's startup in another method to defer
@@ -119,13 +103,6 @@ namespace GitExtensions
                 using FormChooseTranslation formChoose = new();
                 formChoose.ShowDialog();
             }
-
-            AppSettings.TelemetryEnabled ??= MessageBox.Show(
-                null,
-                ResourceManager.TranslatedStrings.TelemetryPermissionMessage,
-                ResourceManager.TranslatedStrings.TelemetryPermissionCaption,
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes;
 
             try
             {
