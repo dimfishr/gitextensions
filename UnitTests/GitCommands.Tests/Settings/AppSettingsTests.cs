@@ -155,7 +155,6 @@ namespace GitCommandsTests.Settings
                 var properties = typeof(AppSettings).GetProperties()
                     .ToDictionary(x => x.Name, x => x);
 
-                yield return (properties[nameof(AppSettings.TelemetryEnabled)], null, true, false);
                 yield return (properties[nameof(AppSettings.AutoNormaliseBranchName)], true, false, false);
                 yield return (properties[nameof(AppSettings.RememberAmendCommitState)], true, false, false);
                 yield return (properties[nameof(AppSettings.StashKeepIndex)], false, false, false);
