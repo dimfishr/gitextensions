@@ -19,7 +19,6 @@ using GitUI.CommandsDialogs.BrowseDialog.DashboardControl;
 using GitUI.CommandsDialogs.WorktreeDialog;
 using GitUI.HelperDialogs;
 using GitUI.Hotkey;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.LeftPanel;
 using GitUI.NBugReports;
 using GitUI.Properties;
@@ -213,7 +212,7 @@ namespace GitUI.CommandsDialogs
         private readonly ISubmoduleStatusProvider _submoduleStatusProvider;
         private readonly IScriptsManager _scriptsManager;
         private List<ToolStripItem>? _currentSubmoduleMenuItems;
-        private readonly FormBrowseDiagnosticsReporter _formBrowseDiagnosticsReporter;
+
         private BuildReportTabPageExtension? _buildReportTabPageExtension;
         private readonly ShellProvider _shellProvider = new();
         private readonly RepositoryHistoryUIService _repositoryHistoryUIService = new();
@@ -266,8 +265,6 @@ namespace GitUI.CommandsDialogs
             _appTitleGenerator = commands.GetRequiredService<IAppTitleGenerator>();
             _windowsJumpListManager = commands.GetRequiredService<IWindowsJumpListManager>();
             _scriptsManager = commands.GetRequiredService<IScriptsManager>();
-
-            _formBrowseDiagnosticsReporter = new FormBrowseDiagnosticsReporter(this);
 
             MainSplitContainer.Visible = false;
             MainSplitContainer.SplitterDistance = DpiUtil.Scale(260);
@@ -470,8 +467,6 @@ namespace GitUI.CommandsDialogs
             SetSplitterPositions();
 
             base.OnLoad(e);
-
-            _formBrowseDiagnosticsReporter.Report();
 
             // All app init is done, make all repo related similar to switching repos
             SetGitModule(this, new GitModuleEventArgs(new GitModule(Module.WorkingDir)));
@@ -715,8 +710,6 @@ namespace GitUI.CommandsDialogs
             _dashboard.RefreshContent();
             _dashboard.Visible = true;
             _dashboard.BringToFront();
-
-            DiagnosticsClient.TrackPageView("Dashboard");
         }
 
         private void HideDashboard()
@@ -734,8 +727,6 @@ namespace GitUI.CommandsDialogs
             toolPanel.LeftToolStripPanelVisible = true;
             toolPanel.RightToolStripPanelVisible = true;
             toolPanel.ResumeLayout();
-
-            DiagnosticsClient.TrackPageView("Revision graph");
         }
 
         private void UpdatePluginMenu(bool validWorkingDir)
@@ -2739,18 +2730,12 @@ namespace GitUI.CommandsDialogs
         private void toggleSplitViewLayout_Click(object sender, EventArgs e)
         {
             AppSettings.ShowSplitViewLayout = !AppSettings.ShowSplitViewLayout;
-            DiagnosticsClient.TrackEvent("Layout change",
-                new Dictionary<string, string> { { nameof(AppSettings.ShowSplitViewLayout), AppSettings.ShowSplitViewLayout.ToString() } });
-
             RefreshSplitViewLayout();
         }
 
         private void toggleLeftPanel_Click(object sender, EventArgs e)
         {
             MainSplitContainer.Panel1Collapsed = !MainSplitContainer.Panel1Collapsed;
-            DiagnosticsClient.TrackEvent("Layout change",
-                new Dictionary<string, string> { { "ShowLeftPanel", MainSplitContainer.Panel1Collapsed.ToString() } });
-
             RefreshLayoutToggleButtonStates();
 
             if (!MainSplitContainer.Panel1Collapsed)
@@ -2789,9 +2774,6 @@ namespace GitUI.CommandsDialogs
         private void SetCommitInfoPosition(CommitInfoPosition position)
         {
             AppSettings.CommitInfoPosition = position;
-            DiagnosticsClient.TrackEvent("Layout change",
-                new Dictionary<string, string> { { nameof(AppSettings.CommitInfoPosition), AppSettings.CommitInfoPosition.ToString() } });
-
             LayoutRevisionInfo();
             RefreshLayoutToggleButtonStates();
         }
@@ -2799,9 +2781,6 @@ namespace GitUI.CommandsDialogs
         private void RefreshSplitViewLayout()
         {
             RightSplitContainer.Panel2Collapsed = !AppSettings.ShowSplitViewLayout;
-            DiagnosticsClient.TrackEvent("Layout change",
-                new Dictionary<string, string> { { nameof(AppSettings.ShowSplitViewLayout), AppSettings.ShowSplitViewLayout.ToString() } });
-
             RefreshLayoutToggleButtonStates();
         }
 

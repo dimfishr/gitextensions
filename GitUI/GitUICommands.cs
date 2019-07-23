@@ -1107,11 +1107,6 @@ namespace GitUI
             }
         }
 
-        public bool StartGeneralSettingsDialog(IWin32Window? owner)
-        {
-            return StartSettingsDialog(owner, CommandsDialogs.SettingsDialog.Pages.GeneralSettingsPage.GetPageReference());
-        }
-
         public bool StartPluginSettingsDialog(IWin32Window? owner)
         {
             return StartSettingsDialog(owner, PluginsSettingsGroup.GetPageReference());

@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using GitCommands;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.ScriptsEngine;
 using GitUIPluginInterfaces;
 using ResourceManager;
@@ -94,8 +93,6 @@ namespace GitUI
             {
                 UICommands = commands;
             }
-
-            DiagnosticsClient.TrackPageView(GetType().FullName);
         }
 
         protected GitModuleForm([NotNull] GitUICommands commands)

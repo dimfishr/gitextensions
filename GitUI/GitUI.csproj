@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AppInsights.WindowsDesktop" />
     <PackageReference Include="EnvDTE" />
     <PackageReference Include="ExCSS" />
     <PackageReference Include="Microsoft-WindowsAPICodePack-Core" />
@@ -69,9 +68,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
 
     <None Remove="Resources\Icons\artwork\**" />
     <None Remove="Resources\Icons\originals\**" />
