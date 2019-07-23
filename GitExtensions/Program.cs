@@ -7,7 +7,6 @@ using GitExtUtils.GitUI;
 using GitUI;
 using GitUI.CommandsDialogs.SettingsDialog;
 using GitUI.CommandsDialogs.SettingsDialog.Pages;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.NBugReports;
 using GitUI.Theming;
 using GitUIPluginInterfaces;
@@ -82,8 +81,6 @@ namespace GitExtensions
 
             try
             {
-                DiagnosticsClient.Initialize(ThisAssembly.Git.IsDirty);
-
                 // If you want to suppress the BugReportInvoker when debugging and exit quickly, uncomment the condition:
                 ////if (!Debugger.IsAttached)
                 {
@@ -136,13 +133,6 @@ namespace GitExtensions
                 using FormChooseTranslation formChoose = new();
                 formChoose.ShowDialog();
             }
-
-            AppSettings.TelemetryEnabled ??= MessageBox.Show(
-                null,
-                ResourceManager.TranslatedStrings.TelemetryPermissionMessage,
-                ResourceManager.TranslatedStrings.TelemetryPermissionCaption,
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes;
 
             try
             {
