@@ -2709,10 +2709,6 @@ Do you want to continue?</source>
         <source>Clear List</source>
         <target />
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>Yes, I allow telemetry</source>
-        <target />
-      </trans-unit>
       <trans-unit id="undoLastCommitToolStripMenuItem.Text">
         <source>Undo last commit</source>
         <target />
@@ -7318,10 +7314,6 @@ Context menu for additional operations</source>
         <source>Include untracked files in autostash</source>
         <target />
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target />
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target />
@@ -7342,10 +7334,6 @@ Context menu for additional operations</source>
         <source>Performance</source>
         <target />
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target />
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target />
@@ -7360,10 +7348,6 @@ Context menu for additional operations</source>
       </trans-unit>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
         <target />
       </trans-unit>
     </body>
@@ -9925,19 +9909,6 @@ Select this commit to populate the full message.</source>
       </trans-unit>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won't collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
         <target />
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

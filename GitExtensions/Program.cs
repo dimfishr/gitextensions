@@ -9,7 +9,6 @@ using GitExtUtils.GitUI;
 using GitUI;
 using GitUI.CommandsDialogs.SettingsDialog;
 using GitUI.CommandsDialogs.SettingsDialog.Pages;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.NBugReports;
 using GitUI.Theming;
 using Microsoft.VisualStudio.Threading;
@@ -65,8 +64,6 @@ namespace GitExtensions
 
             try
             {
-                DiagnosticsClient.Initialize(ThisAssembly.Git.IsDirty);
-
                 if (!Debugger.IsAttached)
                 {
                     AppDomain.CurrentDomain.UnhandledException += (s, e) => BugReportInvoker.Report((Exception)e.ExceptionObject, e.IsTerminating);
@@ -116,13 +113,6 @@ namespace GitExtensions
                 using var formChoose = new FormChooseTranslation();
                 formChoose.ShowDialog();
             }
-
-            AppSettings.TelemetryEnabled ??= MessageBox.Show(
-                null,
-                ResourceManager.TranslatedStrings.TelemetryPermissionMessage,
-                ResourceManager.TranslatedStrings.TelemetryPermissionCaption,
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes;
 
             try
             {

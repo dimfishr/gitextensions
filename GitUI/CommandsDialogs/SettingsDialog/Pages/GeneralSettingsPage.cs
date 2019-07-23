@@ -55,18 +55,12 @@ namespace GitUI.CommandsDialogs.SettingsDialog.Pages
             cboDefaultPullAction.SelectedIndex = 0;
         }
 
-        public static SettingsPageReference GetPageReference()
-        {
-            return new SettingsPageReferenceByType(typeof(GeneralSettingsPage));
-        }
-
         protected override void OnRuntimeLoad()
         {
             base.OnRuntimeLoad();
 
             // align 1st columns across all tables
-            tlpnlBehaviour.AdjustWidthToSize(0, lblDefaultCloneDestination);
-            tlpnlTelemetry.AdjustWidthToSize(0, lblDefaultCloneDestination);
+            tlpnlBehaviour.AdjustWidthToSize(0, lblCommitsLimit, lblDefaultCloneDestination);
         }
 
         private void SetSubmoduleStatus()
@@ -102,8 +96,6 @@ namespace GitUI.CommandsDialogs.SettingsDialog.Pages
                   AppSettings.DefaultPullAction : AppSettings.PullAction.None;
             chkFollowRenamesInFileHistoryExact.Checked = AppSettings.FollowRenamesInFileHistoryExactOnly;
             SetSubmoduleStatus();
-
-            chkTelemetry.Checked = AppSettings.TelemetryEnabled ?? false;
         }
 
         protected override void PageToSettings()
@@ -128,8 +120,6 @@ namespace GitUI.CommandsDialogs.SettingsDialog.Pages
             AppSettings.DefaultCloneDestinationPath = cbDefaultCloneDestination.Text;
             AppSettings.DefaultPullAction = (AppSettings.PullAction)cboDefaultPullAction.SelectedValue;
             AppSettings.FollowRenamesInFileHistoryExactOnly = chkFollowRenamesInFileHistoryExact.Checked;
-
-            AppSettings.TelemetryEnabled = chkTelemetry.Checked;
         }
 
         private static Func<Repository, string> GetParentPath()
@@ -164,11 +154,6 @@ namespace GitUI.CommandsDialogs.SettingsDialog.Pages
         private void ShowGitStatus_CheckedChanged(object sender, System.EventArgs e)
         {
             SetSubmoduleStatus();
-        }
-
-        private void LlblTelemetryPrivacyLink_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
-        {
-            OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/gitextensions/gitextensions/blob/master/PrivacyPolicy.md");
         }
 
         private void lblCommitsLimit_CheckedChanged(object sender, EventArgs e)

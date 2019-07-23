@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
 using GitCommands;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.Script;
 
 namespace GitUI
@@ -64,7 +63,6 @@ namespace GitUI
             : base(enablePositionRestore)
         {
             _uiCommands = commands;
-            DiagnosticsClient.TrackPageView(GetType().FullName);
         }
 
         protected GitModuleForm([NotNull] GitUICommands commands)

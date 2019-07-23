@@ -34,7 +34,6 @@
   <ItemGroup>
     <Compile Include="Product.wxs" />
     <Compile Include="UI\CancelDlg.wxs" />
-    <Compile Include="UI\TelemetryDlg.wxs" />
     <Compile Include="UI\CustomizeDlg.wxs" />
     <Compile Include="UI\ErrorDlg.wxs" />
     <Compile Include="UI\ExitDialog.wxs" />
@@ -69,10 +68,6 @@
     <WixExtension Include="WixUIExtension">
       <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
       <Name>WixUIExtension</Name>
-    </WixExtension>
-    <WixExtension Include="WixUtilExtension">
-      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
-      <Name>WixUtilExtension</Name>
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
