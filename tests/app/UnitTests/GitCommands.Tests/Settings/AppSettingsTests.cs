@@ -169,7 +169,6 @@ namespace GitCommandsTests.Settings
                 const bool isNoISetting = false;
                 const bool isNotNullable = false;
 
-                yield return (properties[nameof(AppSettings.TelemetryEnabled)], null, true, false);
                 yield return (properties[nameof(AppSettings.AutoNormaliseBranchName)], true, false, false);
                 yield return (properties[nameof(AppSettings.RememberAmendCommitState)], true, false, false);
                 yield return (properties[nameof(AppSettings.StashKeepIndex)], false, false, false);
