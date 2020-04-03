@@ -388,44 +388,11 @@
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="DictionariesDir">
-      <Component Id="deDE.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\de-DE.dic" />
-      </Component>
-      <Component Id="enAU.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\en-AU.dic" />
-      </Component>
-      <Component Id="enCA.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\en-CA.dic" />
-      </Component>
-      <Component Id="enGB.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\en-GB.dic" />
-      </Component>
       <Component Id="enUS.dic" Guid="*">
         <File Source="..\Bin\Dictionaries\en-US.dic" />
       </Component>
-      <Component Id="esES.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\es-ES.dic" />
-      </Component>
-      <Component Id="esMX.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\es-MX.dic" />
-      </Component>
-      <Component Id="frFR.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\fr-FR.dic" />
-      </Component>
-      <Component Id="itIT.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\it-IT.dic" />
-      </Component>
-      <Component Id="nlNL.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\nl-NL.dic" />
-      </Component>
-      <Component Id="roRO.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\ro-RO.dic" />
-      </Component>
       <Component Id="ruRU.dic" Guid="*">
         <File Source="..\Bin\Dictionaries\ru-RU.dic" />
-      </Component>
-      <Component Id="plPL.dic" Guid="*">
-        <File Source="..\Bin\Dictionaries\pl-PL.dic" />
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="TranslationsDir">
@@ -750,44 +717,11 @@
         <ComponentRef Id="License.txt" />
       </Feature>
       <Feature Id="Dictionaries" Title="Spelling dictionaries" Level="1">
-        <Feature Id="deDE" Title="de-DE" Level="1">
-          <ComponentRef Id="deDE.dic" />
-        </Feature>
-        <Feature Id="enAU" Title="en-AU" Level="1">
-          <ComponentRef Id="enAU.dic" />
-        </Feature>
-        <Feature Id="enCA" Title="en-CA" Level="1">
-          <ComponentRef Id="enCA.dic" />
-        </Feature>
-        <Feature Id="enGB" Title="en-GB" Level="1">
-          <ComponentRef Id="enGB.dic" />
-        </Feature>
         <Feature Id="enUS" Title="en-US" Level="1">
           <ComponentRef Id="enUS.dic" />
         </Feature>
-        <Feature Id="esES" Title="es-ES" Level="1">
-          <ComponentRef Id="esES.dic" />
-        </Feature>
-        <Feature Id="esMX" Title="es-MX" Level="1">
-          <ComponentRef Id="esMX.dic" />
-        </Feature>
-        <Feature Id="frFR" Title="fr-FR" Level="1">
-          <ComponentRef Id="frFR.dic" />
-        </Feature>
-        <Feature Id="itIT" Title="it-IT" Level="1">
-          <ComponentRef Id="itIT.dic" />
-        </Feature>
-        <Feature Id="nlNL" Title="nl-NL" Level="1">
-          <ComponentRef Id="nlNL.dic" />
-        </Feature>
-        <Feature Id="roRO" Title="ro-RO" Level="1">
-          <ComponentRef Id="roRO.dic" />
-        </Feature>
         <Feature Id="ruRU" Title="ru-RU" Level="1">
           <ComponentRef Id="ruRU.dic" />
-        </Feature>
-        <Feature Id="plPL" Title="pl-PL" Level="1">
-          <ComponentRef Id="plPL.dic" />
         </Feature>
       </Feature>
       <Feature Id="Translation" Title="Translations" Level="1">
