@@ -18,6 +18,21 @@
 
   <!--
     ============================================================
+                       _CopyDictionaries
+
+    Copies all available Dictionaries to the target directory.
+    ============================================================
+    -->
+  <Target Name="_CopyDictionaries" AfterTargets="AfterBuild">
+    <ItemGroup>
+      <Dictionaries Include="$(ProjectDir)..\..\..\Setup\assets\Dictionaries\en-US.dic;$(ProjectDir)..\..\..\Setup\assets\Dictionaries\ru-RU.dic" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(Dictionaries)" DestinationFolder="$(TargetDir)Dictionaries" ContinueOnError="false" />
+  </Target>
+
+  <!--
+    ============================================================
                        _EnumeratePlugins
 
     Enumerates all available plugins $(TargetDir)\Plugins\$(PluginName) and updates
