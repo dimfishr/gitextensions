@@ -9,6 +9,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Threading" Version="$(MicrosoftVisualStudioThreadingVersion)" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
   <ItemGroup>
     <!-- Stop transitive consumption of JetBrains annotations -->
     <PackageReference Update="JetBrains.Annotations" PrivateAssets="all" />
