@@ -18,6 +18,21 @@
 
   <!--
     ============================================================
+                       _PublishDictionaries
+
+    Copies all available Dictionaries to the publish directory.
+    ============================================================
+    -->
+  <Target Name="_PublishDictionaries">
+    <ItemGroup>
+      <Dictionaries Include="$(TargetDir)Dictionaries\*.dic" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(Dictionaries)" DestinationFolder="$(PublishDir)Dictionaries" ContinueOnError="false" />
+  </Target>
+
+  <!--
+    ============================================================
                        _PublishExtraDependecies
 
     Copies additional files (e.g. EasyHook dlls) to the publish directory.
@@ -76,7 +91,7 @@
   <!-- Any errors in targets that executed as 'AfterTargets' don't break the build: https://github.com/microsoft/msbuild/issues/3345
        A fix is going out in VS16.6p3, but it is way too long for us to wait.
     -->
-  <Target Name="CreatePortable" BeforeTargets="Publish" DependsOnTargets="_RetrieveCurrentBuildVersion;_PublishTranslations;_PublishExtraDependecies;_DownloadPluginManager">
+  <Target Name="CreatePortable" BeforeTargets="Publish" DependsOnTargets="_RetrieveCurrentBuildVersion;_PublishTranslations;_PublishDictionaries;_PublishExtraDependecies;_DownloadPluginManager">
     <PropertyGroup>
       <_UserDictionariesSourceDir>$([MSBuild]::NormalizeDirectory('$(RepoRoot)', 'Bin', 'Dictionaries'))</_UserDictionariesSourceDir>
       <_UserDictionariesPublishDir>$([MSBuild]::NormalizeDirectory('$(AppPublishDir)', 'Dictionaries'))</_UserDictionariesPublishDir>
