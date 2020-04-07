@@ -321,7 +321,7 @@
 
     <PropertyGroup>
       <_MSBuildCurrentPath>$([MSBuild]::NormalizePath('$(_VSInstallPath)', 'MSBuild', 'Current', 'Bin'))</_MSBuildCurrentPath>
-      <_SetupArgs>/p:Configuration=$(Configuration);Platform=x86;WiXVersion=$(_WiXVersion);Version=$(CurrentBuildVersion);ArtifactsBinPath=$(ArtifactsBinDir);ArtifactsPublishPath=$(AppPublishDir);OutputPath=$(_PublishMsiPath.TrimEnd('\'));TargetName=$(_PublishMsiFileName)</_SetupArgs>
+      <_SetupArgs>/p:Configuration=$(Configuration);Platform=x64;WiXVersion=$(_WiXVersion);Version=$(CurrentBuildVersion);ArtifactsBinPath=$(ArtifactsBinDir);ArtifactsPublishPath=$(AppPublishDir);OutputPath=$(_PublishMsiPath.TrimEnd('\'));TargetName=$(_PublishMsiFileName)</_SetupArgs>
     </PropertyGroup>
 
     <!-- WiX isn't yet compatible with .NET. See: https://github.com/wixtoolset/issues/issues/5627 
@@ -333,7 +333,7 @@
     <MSBuild 
         Projects="$(ProjectDir)\..\Setup\Setup.wixproj"
         Targets="Build"
-        Properties="Configuration=$(Configuration);Platform=x86;WiXVersion=$(_WiXVersion);Version=$(CurrentBuildVersion);ArtifactsBinPath=$(ArtifactsBinDir);ArtifactsPublishPath=$(AppPublishDir);OutputPath=$(_PublishMsiPath.TrimEnd('\'));TargetName=$(_PublishMsiFileName)"
+        Properties="Configuration=$(Configuration);Platform=x64;WiXVersion=$(_WiXVersion);Version=$(CurrentBuildVersion);ArtifactsBinPath=$(ArtifactsBinDir);ArtifactsPublishPath=$(AppPublishDir);OutputPath=$(_PublishMsiPath.TrimEnd('\'));TargetName=$(_PublishMsiFileName)"
         StopOnFirstFailure="true"
         />
       -->

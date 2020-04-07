@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(WixPropsPath)" Condition="Exists('$(WixPropsPath)')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
     <Version Condition=" '$(Version)' == '' ">0.00</Version>
     <NumericVersion Condition=" '$(NumericVersion)' == '' ">$(Version)</NumericVersion>
     <ProductVersion>3.0</ProductVersion>
@@ -23,6 +23,7 @@
     <DefineConstants>Version=$(Version);NumericVersion=$(Version);ArtifactsBinPath=$(ArtifactsBinPath);ArtifactsPublishPath=$(ArtifactsPublishPath);PluginManagerSourceDir=$(PluginManagerSourceDir)\GitExtensions.PluginManager\Output</DefineConstants>
     <DefineConstants Condition=" '$(Configuration)' == 'Debug' ">Debug;$(DefineConstants)</DefineConstants>
     <SuppressIces>ICE61;ICE80;ICE91;ICE38</SuppressIces>
+    <SuppressPdbOutput>true</SuppressPdbOutput>
     <!-- Disable build acceleration for WIX projects -->
     <AccelerateBuildsInVisualStudio>false</AccelerateBuildsInVisualStudio>
   </PropertyGroup>
