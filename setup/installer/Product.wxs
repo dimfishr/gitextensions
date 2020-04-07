@@ -9,7 +9,7 @@
     <?else ?>
     <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
     <?endif ?>
-    <Package InstallerVersion="500" Compressed="yes" Description="$(var.ProductName)" />
+    <Package InstallerVersion="500" Compressed="yes" Description="$(var.ProductName)" Platform="x64" />
     <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
     <Property Id="ALLUSERS" Value="1" />
     <!--
