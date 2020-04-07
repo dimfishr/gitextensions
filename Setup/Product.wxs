@@ -32,7 +32,7 @@
     <WixVariable Id="WixUISupportPerUser" Value="1" Overridable="yes" />
     <WixVariable Id="WixUISupportPerMachine" Value="1" Overridable="yes" />
     <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="ProgramFilesFolder">
+      <Directory Id="ProgramFiles64Folder">
         <Directory Id="INSTALLDIR" Name="$(var.InstallName)">
           <Directory Id="PuttyDir" Name="PuTTY" />
           <Directory Id="PluginsDir" Name="Plugins">
