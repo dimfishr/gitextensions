@@ -2,7 +2,7 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension" xmlns:VSExtension="http://schemas.microsoft.com/wix/VSExtension">
   <?include Config.wxi?>
   <Product Id="*" UpgradeCode="$(var.UpgradeCode)" Name="$(var.ProductName) $(var.Version)" Manufacturer="$(var.Manufacturer)" Version="$(var.NumericVersion)" Language="1033">
-    <Package InstallerVersion="200" Compressed="yes" Description="$(var.ProductName)" />
+    <Package InstallerVersion="200" Compressed="yes" Description="$(var.ProductName)" Platform="x64" />
     <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
     <Property Id="ALLUSERS" Value="1" />
     <!--
@@ -20,7 +20,7 @@
     <WixVariable Id="WixUISupportPerUser" Value="1" Overridable="yes" />
     <WixVariable Id="WixUISupportPerMachine" Value="1" Overridable="yes" />
     <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="ProgramFilesFolder">
+      <Directory Id="ProgramFiles64Folder">
         <Directory Id="INSTALLDIR" Name="$(var.InstallName)">
           <Directory Id="PluginsDir" Name="Plugins" />
           <Directory Id="DictionariesDir" Name="Dictionaries" />
