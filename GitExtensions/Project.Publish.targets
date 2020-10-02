@@ -262,6 +262,11 @@
             ContinueOnError="ErrorAndStop"
           />
 
+    <ItemGroup>
+        <FilesToDelete Include="$(ArtifactsPublishDir)\GitExtensions-Portable-*.zip"/>
+    </ItemGroup>  
+    <Delete Files="@(FilesToDelete)" />
+
     <ZipDirectory
             SourceDirectory="$(_PublishedPath)"
             DestinationFile="$(_PublishPortablePath)"
