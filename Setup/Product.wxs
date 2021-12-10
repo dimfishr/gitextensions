@@ -139,12 +139,6 @@
       <Component Id="ICSharpCode.TextEditor.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\ICSharpCode.TextEditor.dll" />
       </Component>
-      <Component Id="Microsoft.AI.DependencyCollector.dll" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\Microsoft.AI.DependencyCollector.dll" />
-      </Component>
-      <Component Id="Microsoft.ApplicationInsights.dll" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\Microsoft.ApplicationInsights.dll" />
-      </Component>
       <Component Id="Microsoft.Bcl.AsyncInterfaces.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\Microsoft.Bcl.AsyncInterfaces.dll" />
       </Component>
@@ -621,7 +615,6 @@
       <ComponentRef Id="GitUI.dll" />
       <ComponentRef Id="GitUIPluginInterfaces.dll" />
       <ComponentRef Id="ICSharpCode.TextEditor.dll" />
-      <ComponentRef Id="Microsoft.AI.DependencyCollector.dll" />
       <ComponentRef Id="Microsoft.Bcl.AsyncInterfaces.dll" />
       <ComponentRef Id="Microsoft.Toolkit.HighPerformance.dll" />
       <ComponentRef Id="Microsoft.VisualStudio.Composition.dll" />
