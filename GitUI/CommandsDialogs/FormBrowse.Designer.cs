@@ -1453,7 +1453,7 @@ namespace GitUI.CommandsDialogs
 
         #endregion
 
-        private SplitContainer MainSplitContainer;
+        internal SplitContainer MainSplitContainer;
         private SplitContainer RightSplitContainer;
         private SplitContainer RevisionsSplitContainer;
 
