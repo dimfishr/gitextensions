@@ -35,7 +35,6 @@
             this.translateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTelemetryEnabled = new System.Windows.Forms.ToolStripMenuItem();
             this.reportAnIssueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,15 +81,6 @@
             this.donateToolStripMenuItem.Text = "&Donate";
             this.donateToolStripMenuItem.Click += new System.EventHandler(this.DonateToolStripMenuItemClick);
             // 
-            // tsmiTelemetryEnabled
-            // 
-            this.tsmiTelemetryEnabled.Checked = true;
-            this.tsmiTelemetryEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.tsmiTelemetryEnabled.Name = "tsmiTelemetryEnabled";
-            this.tsmiTelemetryEnabled.Size = new System.Drawing.Size(184, 22);
-            this.tsmiTelemetryEnabled.Text = "&Yes, I allow telemetry";
-            this.tsmiTelemetryEnabled.Click += new System.EventHandler(this.TsmiTelemetryEnabled_Click);
-            // 
             // reportAnIssueToolStripMenuItem
             // 
             this.reportAnIssueToolStripMenuItem.Image = global::GitUI.Properties.Images.BugReport;
@@ -124,7 +114,6 @@
             this.translateToolStripMenuItem,
             this.toolStripSeparator16,
             this.donateToolStripMenuItem,
-            this.tsmiTelemetryEnabled,
             this.reportAnIssueToolStripMenuItem,
             this.checkForUpdatesToolStripMenuItem,
             this.aboutToolStripMenuItem});
@@ -140,7 +129,6 @@
         private ToolStripMenuItem translateToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator16;
         private ToolStripMenuItem donateToolStripMenuItem;
-        private ToolStripMenuItem tsmiTelemetryEnabled;
         private ToolStripMenuItem reportAnIssueToolStripMenuItem;
         private ToolStripMenuItem checkForUpdatesToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
