@@ -19,7 +19,6 @@ using GitUI.CommandsDialogs.BrowseDialog;
 using GitUI.CommandsDialogs.BrowseDialog.DashboardControl;
 using GitUI.CommandsDialogs.WorktreeDialog;
 using GitUI.HelperDialogs;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.LeftPanel;
 using GitUI.NBugReports;
 using GitUI.Properties;
@@ -760,7 +759,6 @@ namespace GitUI.CommandsDialogs
             _createPullRequestsToolStripMenuItem.Enabled = false;
             _viewPullRequestsToolStripMenuItem.Enabled = false;
             _addUpstreamRemoteToolStripMenuItem.Enabled = false;
-
         }
 
         private void HideDashboard()
