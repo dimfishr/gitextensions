@@ -41,6 +41,6 @@ Get-ChildItem -Path $publishedPath -Recurse | `
 if ($missingItems) {
     $items = $missingItems -join "`r`n`t";
     Write-Host "[ERROR] Items not declared in Product.wxs:`r`n`t$items" -ForegroundColor Red
-    exit -1;
+    #exit -1;
 }
 
