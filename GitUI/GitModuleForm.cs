@@ -56,8 +56,15 @@ namespace GitUI
                 GitUICommands oldCommands = _uiCommands;
                 _uiCommands = value;
 
-                _hotkeySettingsLoader = _uiCommands.GetRequiredService<IHotkeySettingsLoader>();
-                _scriptsRunner = _uiCommands.GetRequiredService<IScriptsRunner>();
+                try
+                {
+                    _hotkeySettingsLoader = _uiCommands.GetRequiredService<IHotkeySettingsLoader>();
+                    _scriptsRunner = _uiCommands.GetRequiredService<IScriptsRunner>();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
 
                 OnUICommandsChanged(new GitUICommandsChangedEventArgs(oldCommands));
             }
