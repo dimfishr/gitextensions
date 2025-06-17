@@ -138,9 +138,6 @@
       <Component Id="ICSharpCode.TextEditor.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\ICSharpCode.TextEditor.dll" />
       </Component>
-      <Component Id="Microsoft.AI.DependencyCollector.dll" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\Microsoft.AI.DependencyCollector.dll" />
-      </Component>
       <Component Id="Microsoft.Toolkit.HighPerformance.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\Microsoft.Toolkit.HighPerformance.dll" />
       </Component>
@@ -620,7 +617,6 @@
       <ComponentRef Id="GitUI.dll" />
       <ComponentRef Id="GitUIPluginInterfaces.dll" />
       <ComponentRef Id="ICSharpCode.TextEditor.dll" />
-      <ComponentRef Id="Microsoft.AI.DependencyCollector.dll" />
       <ComponentRef Id="Microsoft.Toolkit.HighPerformance.dll" />
       <ComponentRef Id="Microsoft.VisualStudio.Composition.dll" />
       <ComponentRef Id="Microsoft.VisualStudio.Composition.NetFxAttributes.dll" />
