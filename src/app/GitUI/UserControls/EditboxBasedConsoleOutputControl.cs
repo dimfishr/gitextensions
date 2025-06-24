@@ -33,10 +33,9 @@ namespace GitUI.UserControls
         {
             _editbox = new RichTextBox
             {
-                BackColor = Application.IsDarkModeEnabled ? AppColor.EditorBackground.GetThemeColor() : SystemColors.Info,
+                BackColor = Application.IsDarkModeEnabled ? AppColor.EditorBackground.GetThemeColor() : SystemColors.Window,
                 BorderStyle = BorderStyle.FixedSingle,
                 Dock = DockStyle.Fill,
-                Font = AppSettings.MonospaceFont,
                 ReadOnly = true
             };
             _editbox.LinkClicked += editbox_LinkClicked;
